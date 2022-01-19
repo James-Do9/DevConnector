@@ -2,6 +2,8 @@ const express = require('express');
 const connectDB = require('./config/db');
 const app = express();
 connectDB();//Connect Database
+
+app.use(express.json({extended: false})); // Init Middleware
 app.get("/", (req, res) => res.send("API Running"))
 
 //Define Routes
