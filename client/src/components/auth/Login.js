@@ -1,7 +1,10 @@
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Navigate} from 'react-router-dom';
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
+import {login} from '../../actions/auth';
 
-const Login = () => {
+const Login = ({login, isAuthenticated}) => {
   const [formData, setFormData] = useState({
     email: "",
     password: ""
@@ -13,7 +16,12 @@ const onChange = e => setFormData({...formData, [e.target.name]: e.target.value}
 
 const onSubmit = async (e) =>{
     e.preventDefault();
-    console.log("Failed");
+    login(email, password);
+}
+
+//Navigate is logged in with
+if(isAuthenticated){
+    return <Navigate to="/dashboard"/>
 }
 
 return (
@@ -39,10 +47,18 @@ return (
     <input type="submit" className="btn btn-primary" value="Login" />
     </form>
     <p className="my-1">
-    Don't have an account? <Link to="/register">Sign In</Link>
+    Don't have an account? <Link to="/register">Sign Up</Link>
     </p>
 </section>
 );
 };
 
-export default Login;
+Login.propTypes = {
+    login: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool
+}
+const mapStateToProps = (state) => ({
+    isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps, {login})(Login);
