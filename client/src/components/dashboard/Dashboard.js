@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {getCurrentProfile} from '../../actions/profile'
 
 const Dashboard = ({getCurrentProfile, auth, profile}) => {
-    useEffect(() =>{
+    useEffect(() => {
         getCurrentProfile();
     }, []);
 
