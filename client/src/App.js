@@ -13,19 +13,26 @@ import AddExperience from "./components/profile-forms/AddExperience";
 import AddEducation from "./components/profile-forms/AddEducation";
 import Profiles from './components/profiles/Profiles';
 import Profile from './components/profile/Profile';
+import Post from './components/post/Post';
+import Posts from './components/posts/Posts';
 import {Provider} from 'react-redux';
 import store from './store';
 import {loadUser} from './actions/auth';
 import setAuthToken from './utils/setAuthToken';
 import './App.css';
-
-if(localStorage.token){
-  setAuthToken(localStorage.token);
-}
+import { LOGOUT } from './actions/types';
 
 const App = () => { 
-  useEffect(()=>{
+  useEffect(() => {
+    if (localStorage.token) {
+      setAuthToken(localStorage.token);
+    }
+
     store.dispatch(loadUser());
+
+    window.addEventListener('storage', () => {
+      if (!localStorage.token) store.dispatch({ type: LOGOUT });
+    });
   }, []);
 
   return(
@@ -59,6 +66,14 @@ const App = () => {
           <Route
             path="add-education"
             element={<PrivateRoute component={AddEducation} />}
+          />
+          <Route
+            path="posts"
+            element={<PrivateRoute component={Posts} />}
+          />
+          <Route
+            path="posts/:id"
+            element={<PrivateRoute component={Post} />}
           />
         </Routes>
       </Fragment>
