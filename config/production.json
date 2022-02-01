@@ -1,5 +1,5 @@
 {
-    "mongoURI": "mongodb+srv://Cyberbladester:Attondel@devconnector.zbihd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "mongoURI": "mongodb+srv://Cyberbladester:Attondel@devconnector.zbihd.mongodb.net/DevConnector?retryWrites=true&w=majority",
     "jwtSecret": "mysecrettoken",
     "githubClientId": "efe1202c1f196fd2769c",
     "githubSecret": "c78db55d76f60528d8f82ee0996392e77f122d25"
