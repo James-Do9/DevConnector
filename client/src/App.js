@@ -15,6 +15,7 @@ import Profiles from './components/profiles/Profiles';
 import Profile from './components/profile/Profile';
 import Post from './components/post/Post';
 import Posts from './components/posts/Posts';
+import NotFound from './components/layout/NotFound';
 import {Provider} from 'react-redux';
 import store from './store';
 import {loadUser} from './actions/auth';
@@ -47,6 +48,7 @@ const App = () => {
           <Route path='/login' element={<Login/>}/>
           <Route path='/profiles' element={<Profiles/>}/>
           <Route path='/profile/:id' element={<Profile/>}/>
+          <Route path="/*" element={<NotFound />} />
           <Route
             path="dashboard"
             element={<PrivateRoute component={Dashboard} />}

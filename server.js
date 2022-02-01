@@ -4,7 +4,7 @@ const path = require('path');
 const app = express();
 connectDB();//Connect Database
 
-app.use(express.json({extended: false})); // Init Middleware
+app.use(express.json()); // Init Middleware
 
 //Define Routes
 app.use('/api/users', require('./routes/api/users'));
