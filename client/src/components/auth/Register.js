@@ -5,8 +5,6 @@ import {setAlert} from '../../actions/alert';
 import {register} from '../../actions/auth';
 import PropTypes from 'prop-types';
 
-// import axios from 'axios';
-
 const Register = ({setAlert, register, isAuthenticated}) => {
 
     const [formData, setFormData] = useState({
@@ -27,23 +25,6 @@ const Register = ({setAlert, register, isAuthenticated}) => {
         }
         else{
             register({name, email, password});
-            // const newUser = {
-            //     name,
-            //     email, 
-            //     password
-            // }
-            // try{
-            //     const config = {
-            //         headers: {
-            //             "Content-Type": "application/json"
-            //         }
-            //     }
-            //     const body = JSON.stringify(newUser);
-            //     const res = await axios.post("/api/users", body, config);
-            //     console.log(res.data);
-            // }catch(err){
-            //     console.error(err.response.data);
-            // }
         }
     }
 
