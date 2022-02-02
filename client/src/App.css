@@ -1,6 +1,6 @@
 /* Global Styles */
 :root {
-  --primary-color: #17a2b8;
+  --primary-color: rgb(68,104,241);
   --dark-color: #343a40;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
@@ -17,8 +17,9 @@ body {
   font-family: 'Raleway', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background-color: #fff;
-  color: #333;
+  background-color: rgb(41, 42, 46);
+  color: white;
+  font-family: 'Orbitron', sans-serif;
 }
 
 a {
@@ -32,6 +33,16 @@ ul {
 
 img {
   width: 100%;
+}
+
+td{
+  color: black;
+  background-color: white;
+}
+
+tr{
+  color: black;
+  border: 1px solid white;
 }
 
 /* Utilities */
@@ -137,6 +148,7 @@ img {
   margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
   outline: none;
+  border-radius: 10px;
 }
 
 .badge {
@@ -162,6 +174,7 @@ img {
 .alert-primary {
   background: var(--primary-color);
   color: #fff;
+  border-radius: 10px;
 }
 
 .btn-light,
@@ -170,6 +183,7 @@ img {
 .alert-light {
   background: var(--light-color);
   color: #333;
+  border-radius: 10px;
 }
 
 .btn-dark,
@@ -214,6 +228,47 @@ img {
   border: #ccc solid 1px;
 }
 
+.button{
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.button:active,
+.button:hover {
+  outline: 0;
+}
+
+.button span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.button:hover span {
+  background: none;
+}
+
 .round-img {
   border-radius: 50%;
 }
@@ -256,6 +311,7 @@ img {
   padding: 0.4rem;
   font-size: 1.2rem;
   border: 1px solid #ccc;
+  border-radius: 15px;
 }
 
 .form input[type='submit'],
@@ -295,7 +351,8 @@ button {
 }
 
 .table th {
-  background: var(--light-color);
+  background: var(--primary-color);
+  color: white;
 }
 
 /* Navbar */
@@ -308,8 +365,9 @@ button {
   z-index: 1;
   width: 100%;
   top: 0;
-  border-bottom: solid 1px var(--primary-color);
+  border-bottom: solid 1px white;
   opacity: 0.9;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
 }
 
 .navbar ul {
@@ -396,6 +454,7 @@ button {
 .profile-about {
   grid-area: about;
   text-align: center;
+  border-radius: 10px;
 }
 
 .profile-about .skills {
@@ -407,10 +466,12 @@ button {
 
 .profile-exp {
   grid-area: exp;
+  border-radius: 10px;
 }
 
 .profile-edu {
   grid-area: edu;
+  border-radius: 10px;
 }
 
 .profile-exp h2,
@@ -441,6 +502,7 @@ button {
 
 .profile-github .repo {
   display: flex;
+  border-radius: 10px;
 }
 
 .profile-github .repo > div:first-child {
@@ -489,6 +551,13 @@ button {
 }
 
 /* Mobile Styles */
+@media (min-width: 768px) {
+  .button {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
+
 @media (max-width: 700px) {
   .container {
     margin-top: 8rem;

@@ -44,7 +44,7 @@ return (
         minLength="6" value={password} onChange={e => onChange(e)}
         />
     </div>
-    <input type="submit" className="btn btn-primary" value="Login" />
+    <input type="submit" className="button" value="Login" />
     </form>
     <p className="my-1">
     Don't have an account? <Link to="/register">Sign Up</Link>

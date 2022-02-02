@@ -1,5 +1,5 @@
 import React, {Fragment, useState} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Navigate} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {createProfile} from '../../actions/profile';
@@ -30,6 +30,7 @@ const CreateProfile = ({createProfile, history}) => {
         e.preventDefault();
         createProfile(formData, history);
     }
+    
   return <section className="container">
   <h1 className="large text-primary">
     Create Your Profile
